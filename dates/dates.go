@@ -2,10 +2,13 @@ package dates
 
 import (
 	"fmt"
+	"github.com/Chngzhen/gox/arrays"
 	"strconv"
 	"strings"
 	"time"
 )
+
+var dateTimeChars = []byte{'y', 'M', 'd', 'H', 'm', 's', 'S'}
 
 // FormatDate2String 按照指定的格式将时间格式化为字符串。若datetime为空，则返回空字符串。
 func FormatDate2String(datetime time.Time, format string) string {
@@ -37,8 +40,7 @@ func doFormatDate2String(str string, stIndex, enIndex int, dt time.Time) string 
 			return ""
 		}
 		result.WriteString(doFormatDateFragment2String(fragment, dt))
-	} else if str[stIndex] != 'y' && str[stIndex] != 'M' && str[stIndex] != 'd' &&
-		str[stIndex] != 'H' && str[stIndex] != 'm' && str[stIndex] != 's' && str[stIndex] != 'S' {
+	} else if !arrays.ContainsByte(dateTimeChars, str[stIndex]) {
 		// 首字节非时间字符，直接拼接，片段首字符索引继续向右浮动寻找新片段
 		result.WriteByte(str[stIndex])
 		result.WriteString(doFormatDate2String(str, stIndex+1, stIndex+1, dt))
