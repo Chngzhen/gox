@@ -1,4 +1,4 @@
-package xfiles
+package files
 
 import (
 	"fmt"

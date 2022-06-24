@@ -1,4 +1,4 @@
-package xdates
+package dates
 
 const (
 	FmtDateTime            = "yyyy-MM-dd HH:mm:ss"

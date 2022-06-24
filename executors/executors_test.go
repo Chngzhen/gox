@@ -1,4 +1,4 @@
-package xexecutors
+package executors
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
-package xobjects
+package objects
 
 import (
 	"fmt"

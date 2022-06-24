@@ -1,4 +1,4 @@
-package xdates
+package dates
 
 import (
 	"fmt"

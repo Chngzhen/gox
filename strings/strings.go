@@ -1,4 +1,4 @@
-package xstrings
+package strings
 
 // ArrayToCommaDelimitedString 将字符串数组arr拼接成英文逗号分隔的字符串。
 func ArrayToCommaDelimitedString(arr []string) string {
